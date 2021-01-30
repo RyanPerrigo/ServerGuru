@@ -1,0 +1,6 @@
+framework module Pods_ServerGuruTests {
+  umbrella header "Pods-ServerGuruTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
