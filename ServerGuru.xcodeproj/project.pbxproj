@@ -9,19 +9,24 @@
 /* Begin PBXBuildFile section */
 		1045668213B3D8C3B398A105 /* Pods_ServerGuruTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C453780FCD254F132B29B317 /* Pods_ServerGuruTests.framework */; };
 		10C7EA0212609F99880337F4 /* Pods_ServerGuru.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28C00054A0A87D79E26A32F6 /* Pods_ServerGuru.framework */; };
+		4B1BE232266EA80000B51534 /* DynamicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1BE231266EA80000B51534 /* DynamicCollectionView.swift */; };
+		4B1BE235266EA9BF00B51534 /* ViewHolderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1BE234266EA9BF00B51534 /* ViewHolderModel.swift */; };
+		4B1BE238266EB61700B51534 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1BE237266EB61700B51534 /* Coordinator.swift */; };
+		4B1BE23B266ED2AC00B51534 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1BE23A266ED2AC00B51534 /* MainCoordinator.swift */; };
+		4B1BE23F2671212E00B51534 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B1BE23E2671212E00B51534 /* MainViewController.xib */; };
+		4B1BE2412671273100B51534 /* MainVCM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1BE2402671273100B51534 /* MainVCM.swift */; };
+		4B1BE2432671295C00B51534 /* DynamicCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B1BE2422671295C00B51534 /* DynamicCollectionView.xib */; };
+		4B1BE24726712BE600B51534 /* StandardButtonCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1BE24526712BE600B51534 /* StandardButtonCVC.swift */; };
+		4B1BE24826712BE600B51534 /* StandardButtonCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B1BE24626712BE600B51534 /* StandardButtonCVC.xib */; };
 		4B4128AD2556320600EDE383 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4128AC2556320600EDE383 /* AppDelegate.swift */; };
 		4B4128AF2556320600EDE383 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4128AE2556320600EDE383 /* SceneDelegate.swift */; };
 		4B4128B12556320600EDE383 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4128B02556320600EDE383 /* MainViewController.swift */; };
-		4B4128B42556320600EDE383 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B4128B22556320600EDE383 /* Main.storyboard */; };
 		4B4128B72556320600EDE383 /* ServerGuru.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4B4128B52556320600EDE383 /* ServerGuru.xcdatamodeld */; };
 		4B4128B92556320900EDE383 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B4128B82556320900EDE383 /* Assets.xcassets */; };
 		4B4128BC2556320900EDE383 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B4128BA2556320900EDE383 /* LaunchScreen.storyboard */; };
 		4B4128C72556320A00EDE383 /* ServerGuruTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4128C62556320A00EDE383 /* ServerGuruTests.swift */; };
 		4B4128D22556320A00EDE383 /* ServerGuruUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4128D12556320A00EDE383 /* ServerGuruUITests.swift */; };
 		4B4128ED25563E3200EDE383 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4128EC25563E3200EDE383 /* Restaurant.swift */; };
-		4B4128FC255643B800EDE383 /* MainViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4128FB255643B800EDE383 /* MainViewControllerModel.swift */; };
-		4B4129062556F7EF00EDE383 /* Steps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4129052556F7EF00EDE383 /* Steps.swift */; };
-		4B4129162556FA7D00EDE383 /* RootFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4129152556FA7D00EDE383 /* RootFlow.swift */; };
 		4B4129202559E02C00EDE383 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B41291F2559E02C00EDE383 /* MenuViewController.swift */; };
 		4B4129282559E03C00EDE383 /* MenuViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4129272559E03C00EDE383 /* MenuViewControllerModel.swift */; };
 		CD7FED4D26169934DF6E68C3 /* Pods_ServerGuru_ServerGuruUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B241EF0B1BB0DFCA28DF82C0 /* Pods_ServerGuru_ServerGuruUITests.framework */; };
@@ -46,11 +51,19 @@
 
 /* Begin PBXFileReference section */
 		28C00054A0A87D79E26A32F6 /* Pods_ServerGuru.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ServerGuru.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B1BE231266EA80000B51534 /* DynamicCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCollectionView.swift; sourceTree = "<group>"; };
+		4B1BE234266EA9BF00B51534 /* ViewHolderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHolderModel.swift; sourceTree = "<group>"; };
+		4B1BE237266EB61700B51534 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		4B1BE23A266ED2AC00B51534 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		4B1BE23E2671212E00B51534 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		4B1BE2402671273100B51534 /* MainVCM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCM.swift; sourceTree = "<group>"; };
+		4B1BE2422671295C00B51534 /* DynamicCollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DynamicCollectionView.xib; sourceTree = "<group>"; };
+		4B1BE24526712BE600B51534 /* StandardButtonCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardButtonCVC.swift; sourceTree = "<group>"; };
+		4B1BE24626712BE600B51534 /* StandardButtonCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StandardButtonCVC.xib; sourceTree = "<group>"; };
 		4B4128A92556320600EDE383 /* ServerGuru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ServerGuru.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B4128AC2556320600EDE383 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B4128AE2556320600EDE383 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4B4128B02556320600EDE383 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		4B4128B32556320600EDE383 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4B4128B62556320600EDE383 /* ServerGuru.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ServerGuru.xcdatamodel; sourceTree = "<group>"; };
 		4B4128B82556320900EDE383 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B4128BB2556320900EDE383 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -62,9 +75,6 @@
 		4B4128D12556320A00EDE383 /* ServerGuruUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerGuruUITests.swift; sourceTree = "<group>"; };
 		4B4128D32556320A00EDE383 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B4128EC25563E3200EDE383 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
-		4B4128FB255643B800EDE383 /* MainViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewControllerModel.swift; sourceTree = "<group>"; };
-		4B4129052556F7EF00EDE383 /* Steps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Steps.swift; sourceTree = "<group>"; };
-		4B4129152556FA7D00EDE383 /* RootFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootFlow.swift; sourceTree = "<group>"; };
 		4B41291F2559E02C00EDE383 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		4B4129272559E03C00EDE383 /* MenuViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewControllerModel.swift; sourceTree = "<group>"; };
 		58271302C0F8CE28ECD9E0B4 /* Pods-ServerGuruTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ServerGuruTests.release.xcconfig"; path = "Target Support Files/Pods-ServerGuruTests/Pods-ServerGuruTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -105,6 +115,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B1BE230266EA7DC00B51534 /* DynamicCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				4B1BE231266EA80000B51534 /* DynamicCollectionView.swift */,
+				4B1BE2422671295C00B51534 /* DynamicCollectionView.xib */,
+			);
+			path = DynamicCollectionView;
+			sourceTree = "<group>";
+		};
+		4B1BE233266EA9A000B51534 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4B1BE234266EA9BF00B51534 /* ViewHolderModel.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		4B1BE236266EB60400B51534 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				4B1BE237266EB61700B51534 /* Coordinator.swift */,
+				4B1BE23A266ED2AC00B51534 /* MainCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		4B1BE24426712A5F00B51534 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4B1BE24526712BE600B51534 /* StandardButtonCVC.swift */,
+				4B1BE24626712BE600B51534 /* StandardButtonCVC.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		4B4128A02556320500EDE383 = {
 			isa = PBXGroup;
 			children = (
@@ -130,12 +175,14 @@
 		4B4128AB2556320600EDE383 /* ServerGuru */ = {
 			isa = PBXGroup;
 			children = (
-				4B4129032556F7D900EDE383 /* Flow */,
-				4B4128F4255642C400EDE383 /* Controllers */,
+				4B4128F4255642C400EDE383 /* Screens */,
+				4B1BE24426712A5F00B51534 /* Cells */,
+				4B1BE236266EB60400B51534 /* Coordinator */,
+				4B1BE233266EA9A000B51534 /* Protocols */,
+				4B1BE230266EA7DC00B51534 /* DynamicCollectionView */,
 				4B4128EB25563E1000EDE383 /* Restaurant */,
 				4B4128AC2556320600EDE383 /* AppDelegate.swift */,
 				4B4128AE2556320600EDE383 /* SceneDelegate.swift */,
-				4B4128B22556320600EDE383 /* Main.storyboard */,
 				4B4128B82556320900EDE383 /* Assets.xcassets */,
 				4B4128BA2556320900EDE383 /* LaunchScreen.storyboard */,
 				4B4128BD2556320900EDE383 /* Info.plist */,
@@ -170,38 +217,13 @@
 			path = Restaurant;
 			sourceTree = "<group>";
 		};
-		4B4128F4255642C400EDE383 /* Controllers */ = {
+		4B4128F4255642C400EDE383 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
 				4B41291E2559DFFB00EDE383 /* MainViewController */,
 				4B41291D2559DFEA00EDE383 /* MenuViewController */,
 			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		4B4129032556F7D900EDE383 /* Flow */ = {
-			isa = PBXGroup;
-			children = (
-				4B4129142556FA3400EDE383 /* RootFlow */,
-				4B4129042556F7E100EDE383 /* Steps */,
-			);
-			path = Flow;
-			sourceTree = "<group>";
-		};
-		4B4129042556F7E100EDE383 /* Steps */ = {
-			isa = PBXGroup;
-			children = (
-				4B4129052556F7EF00EDE383 /* Steps.swift */,
-			);
-			path = Steps;
-			sourceTree = "<group>";
-		};
-		4B4129142556FA3400EDE383 /* RootFlow */ = {
-			isa = PBXGroup;
-			children = (
-				4B4129152556FA7D00EDE383 /* RootFlow.swift */,
-			);
-			path = RootFlow;
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		4B41291D2559DFEA00EDE383 /* MenuViewController */ = {
@@ -217,7 +239,8 @@
 			isa = PBXGroup;
 			children = (
 				4B4128B02556320600EDE383 /* MainViewController.swift */,
-				4B4128FB255643B800EDE383 /* MainViewControllerModel.swift */,
+				4B1BE23E2671212E00B51534 /* MainViewController.xib */,
+				4B1BE2402671273100B51534 /* MainVCM.swift */,
 			);
 			path = MainViewController;
 			sourceTree = "<group>";
@@ -354,8 +377,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B4128BC2556320900EDE383 /* LaunchScreen.storyboard in Resources */,
+				4B1BE23F2671212E00B51534 /* MainViewController.xib in Resources */,
+				4B1BE24826712BE600B51534 /* StandardButtonCVC.xib in Resources */,
+				4B1BE2432671295C00B51534 /* DynamicCollectionView.xib in Resources */,
 				4B4128B92556320900EDE383 /* Assets.xcassets in Resources */,
-				4B4128B42556320600EDE383 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,13 +509,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B4128ED25563E3200EDE383 /* Restaurant.swift in Sources */,
-				4B4129062556F7EF00EDE383 /* Steps.swift in Sources */,
-				4B4128FC255643B800EDE383 /* MainViewControllerModel.swift in Sources */,
+				4B1BE23B266ED2AC00B51534 /* MainCoordinator.swift in Sources */,
 				4B4128B12556320600EDE383 /* MainViewController.swift in Sources */,
 				4B4129202559E02C00EDE383 /* MenuViewController.swift in Sources */,
+				4B1BE24726712BE600B51534 /* StandardButtonCVC.swift in Sources */,
 				4B4129282559E03C00EDE383 /* MenuViewControllerModel.swift in Sources */,
+				4B1BE235266EA9BF00B51534 /* ViewHolderModel.swift in Sources */,
+				4B1BE238266EB61700B51534 /* Coordinator.swift in Sources */,
+				4B1BE2412671273100B51534 /* MainVCM.swift in Sources */,
+				4B1BE232266EA80000B51534 /* DynamicCollectionView.swift in Sources */,
 				4B4128B72556320600EDE383 /* ServerGuru.xcdatamodeld in Sources */,
-				4B4129162556FA7D00EDE383 /* RootFlow.swift in Sources */,
 				4B4128AD2556320600EDE383 /* AppDelegate.swift in Sources */,
 				4B4128AF2556320600EDE383 /* SceneDelegate.swift in Sources */,
 			);
@@ -528,14 +556,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4B4128B22556320600EDE383 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4B4128B32556320600EDE383 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4B4128BA2556320900EDE383 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

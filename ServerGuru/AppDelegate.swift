@@ -11,9 +11,22 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+	var window: UIWindow?
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+		
+		let navVC: UINavigationController = UINavigationController()
+		navVC.navigationItem.standardAppearance?.backgroundColor = UIColor.clear
+		
+		var coordinator: Coordinator = MainCoordinator()
+		coordinator.navController = navVC
+		
+		let window = UIWindow(frame: UIScreen.main.bounds)
+		window.rootViewController = navVC
+		window.makeKeyAndVisible()
+		self.window = window
+		
+		coordinator.start()
 		// Override point for customization after application launch.
 		return true
 	}

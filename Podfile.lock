@@ -1,4 +1,10 @@
 PODS:
+  - Alamofire (5.2.2)
+  - Reusable (4.1.1):
+    - Reusable/Storyboard (= 4.1.1)
+    - Reusable/View (= 4.1.1)
+  - Reusable/Storyboard (4.1.1)
+  - Reusable/View (4.1.1)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -10,21 +16,27 @@ PODS:
   - RxSwift (5.1.1)
 
 DEPENDENCIES:
+  - Alamofire (~> 5.2)
+  - Reusable
   - RxFlow
 
 SPEC REPOS:
   trunk:
+    - Alamofire
+    - Reusable
     - RxCocoa
     - RxFlow
     - RxRelay
     - RxSwift
 
 SPEC CHECKSUMS:
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  Reusable: 53a9acf5c536f229b31b5865782414b508252ddb
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxFlow: c5242626a73a03d0a0163f0ab795538c467b791f
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
 
-PODFILE CHECKSUM: 31380088c40352b07e522b35c22401b816ed8ffd
+PODFILE CHECKSUM: 20ab2f8f5def525f524e876285a513c51c15b46e
 
 COCOAPODS: 1.9.3

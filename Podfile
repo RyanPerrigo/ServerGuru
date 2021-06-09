@@ -7,6 +7,8 @@ target 'ServerGuru' do
 
   # Pods for ServerGuru
   pod 'RxFlow'
+	pod 'Alamofire', '~> 5.2'
+	pod 'Reusable'
 
 
 

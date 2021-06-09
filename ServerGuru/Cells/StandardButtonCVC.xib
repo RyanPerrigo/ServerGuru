@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="StandardButtonCVC" customModule="ServerGuru" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="286" height="274"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="286" height="274"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eTJ-z8-bD9">
+                        <rect key="frame" x="0.0" y="0.0" width="286" height="274"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1fm-T5-ZTa">
+                                <rect key="frame" x="43" y="101.5" width="200" height="71.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELCOME" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZeD-RF-RBe">
+                                        <rect key="frame" x="58.5" y="0.0" width="83" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TO" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQH-rx-uWA">
+                                        <rect key="frame" x="88.5" y="25.5" width="23" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SERVER GURU" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3T-z6-49E">
+                                        <rect key="frame" x="43.5" y="51" width="113.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1fm-T5-ZTa" firstAttribute="centerX" secondItem="eTJ-z8-bD9" secondAttribute="centerX" id="8e3-8Y-U1X"/>
+                            <constraint firstItem="1fm-T5-ZTa" firstAttribute="width" secondItem="eTJ-z8-bD9" secondAttribute="width" multiplier="0.7" id="mGg-fd-NKN"/>
+                            <constraint firstItem="1fm-T5-ZTa" firstAttribute="centerY" secondItem="eTJ-z8-bD9" secondAttribute="centerY" id="vxg-e1-2lb"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="eTJ-z8-bD9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ID3-ss-i2g"/>
+                <constraint firstAttribute="bottom" secondItem="eTJ-z8-bD9" secondAttribute="bottom" id="IPR-Iu-UpS"/>
+                <constraint firstAttribute="trailing" secondItem="eTJ-z8-bD9" secondAttribute="trailing" id="Szl-9s-VNK"/>
+                <constraint firstItem="eTJ-z8-bD9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Tq5-IG-DhU"/>
+            </constraints>
+            <size key="customSize" width="286" height="274"/>
+            <connections>
+                <outlet property="labelOne" destination="ZeD-RF-RBe" id="4ob-LW-kV6"/>
+                <outlet property="labelThree" destination="l3T-z6-49E" id="c3x-re-SXl"/>
+                <outlet property="labelTwo" destination="VQH-rx-uWA" id="ANg-d8-Zm9"/>
+            </connections>
+            <point key="canvasLocation" x="179.71014492753625" y="62.276785714285708"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
