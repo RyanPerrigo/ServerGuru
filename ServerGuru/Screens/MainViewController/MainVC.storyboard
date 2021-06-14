@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MainVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="MainVC" customModule="ServerGuru" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cJ9-wg-Kbr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oA1-uG-IhZ" customClass="DynamicCollectionView" customModule="ServerGuru" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="702"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Uh-pX-ySO">
+                                <rect key="frame" x="0.0" y="746" width="414" height="150"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="111" translatesAutoresizingMaskIntoConstraints="NO" id="NSh-rI-bBu">
+                                        <rect key="frame" x="104" y="60" width="206" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQf-yc-D6j">
+                                                <rect key="frame" x="0.0" y="0.0" width="38" height="30"/>
+                                                <state key="normal" title="Login"/>
+                                                <connections>
+                                                    <action selector="loginPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Dtl-3X-2bP"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ief-gq-l38">
+                                                <rect key="frame" x="149" y="0.0" width="57" height="30"/>
+                                                <state key="normal" title="Register"/>
+                                                <connections>
+                                                    <action selector="registerPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fnE-a2-Itm"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="NSh-rI-bBu" firstAttribute="centerY" secondItem="0Uh-pX-ySO" secondAttribute="centerY" id="kNQ-uz-qaP"/>
+                                    <constraint firstItem="NSh-rI-bBu" firstAttribute="centerX" secondItem="0Uh-pX-ySO" secondAttribute="centerX" id="lsJ-4e-6qX"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vCX-4O-oIi"/>
+                        <color key="backgroundColor" red="0.14117647059999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="vCX-4O-oIi" firstAttribute="trailing" secondItem="0Uh-pX-ySO" secondAttribute="trailing" id="6jh-dC-fLs"/>
+                            <constraint firstItem="oA1-uG-IhZ" firstAttribute="leading" secondItem="vCX-4O-oIi" secondAttribute="leading" id="ACc-Dm-ftZ"/>
+                            <constraint firstItem="0Uh-pX-ySO" firstAttribute="leading" secondItem="vCX-4O-oIi" secondAttribute="leading" id="Kyr-VW-XFV"/>
+                            <constraint firstItem="0Uh-pX-ySO" firstAttribute="top" secondItem="cJ9-wg-Kbr" secondAttribute="bottom" constant="-150" id="Q7R-QD-3kq"/>
+                            <constraint firstItem="0Uh-pX-ySO" firstAttribute="top" secondItem="oA1-uG-IhZ" secondAttribute="bottom" id="WgZ-hP-MOt"/>
+                            <constraint firstItem="vCX-4O-oIi" firstAttribute="trailing" secondItem="oA1-uG-IhZ" secondAttribute="trailing" id="fc5-Te-cID"/>
+                            <constraint firstItem="oA1-uG-IhZ" firstAttribute="top" secondItem="vCX-4O-oIi" secondAttribute="top" id="tg2-9t-Dzv"/>
+                            <constraint firstItem="0Uh-pX-ySO" firstAttribute="bottom" secondItem="cJ9-wg-Kbr" secondAttribute="bottom" id="veB-c4-z2u"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dynamicCollectionView" destination="oA1-uG-IhZ" id="8QY-Gz-b0G"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32" y="89"/>
+        </scene>
+    </scenes>
+</document>

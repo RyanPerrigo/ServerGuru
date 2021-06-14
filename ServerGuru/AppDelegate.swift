@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		self.window = window
 		
 		coordinator.start()
+		FirebaseApp.configure()
 		// Override point for customization after application launch.
 		return true
 	}

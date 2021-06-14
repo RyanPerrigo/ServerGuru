@@ -6,10 +6,16 @@ target 'ServerGuru' do
   use_frameworks!
 
   # Pods for ServerGuru
-  pod 'RxFlow'
 	pod 'Alamofire', '~> 5.2'
 	pod 'Reusable'
-
+	pod 'Firebase/Core'
+	pod 'Firebase/Auth'
+	pod 'Firebase/Database'
+	pod 'RxSwift', '5.1.1'
+	pod 'KeychainAccess'
+	pod 'RxCocoa', '5.1.1'
+	# add pods for desired Firebase products
+	# https://firebase.google.com/docs/ios/setup#available-pods
 
 
   target 'ServerGuruTests' do

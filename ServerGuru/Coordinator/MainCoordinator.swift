@@ -14,8 +14,8 @@ class MainCoordinator: Coordinator {
 	var navController: UINavigationController?
 	
 	func start() {
-		
-		var vc: UIViewController & Coordinating = MainViewController()
+		let viewModel = MainVCM()
+		let vc = MainVC.instantiate(withViewModel: viewModel)
 		vc.coordinator = self
 		UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
 		UINavigationBar.appearance().shadowImage = UIImage()
