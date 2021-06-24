@@ -19,15 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		let navVC: UINavigationController = UINavigationController()
 		navVC.navigationItem.standardAppearance?.backgroundColor = UIColor.clear
 		
-		var coordinator: Coordinator = MainCoordinator()
-		coordinator.navController = navVC
+		let coordinator = MainCoordinator(navigationController: navVC)
 		
 		let window = UIWindow(frame: UIScreen.main.bounds)
 		window.rootViewController = navVC
 		window.makeKeyAndVisible()
 		self.window = window
 		
-		coordinator.start()
+		coordinator.eventOccured(with: Event.appStart)
 		FirebaseApp.configure()
 		// Override point for customization after application launch.
 		return true

@@ -12,16 +12,15 @@ import RxCocoa
 
 class MainVCM: ViewModel{
 	
-	let holderModelStateSubject = BehaviorSubject<[BaseviewHolderModel]>(value: [])
+	let holderModelStateSubject = BehaviorSubject<[BaseViewHolderModel]>(value: [])
 	
-	func viewModelStateObservable() -> Observable<[BaseviewHolderModel]> {
+	func viewModelStateObservable() -> Observable<[BaseViewHolderModel]> {
 		return holderModelStateSubject.asObservable()
 	}
 	
 	func setScreenState() {
-		let holderModelsToDisplay:[BaseviewHolderModel] = [
-		StandardButtonCellModel()
-		
+		let holderModelsToDisplay:[BaseViewHolderModel] = [
+		WelcomeScreenVHM()
 		]
 		
 		holderModelStateSubject.onNext(holderModelsToDisplay)

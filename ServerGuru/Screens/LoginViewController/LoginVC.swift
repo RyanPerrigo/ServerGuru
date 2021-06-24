@@ -7,43 +7,64 @@
 
 import UIKit
 import Reusable
+import FirebaseAuth
 
-class LoginVC: UIViewController, ViewModelBased, StoryboardBased, Coordinating {
+class LoginVC: UIViewController, ViewModelBased, StoryboardBased {
 	
 	
 	var viewModel: LoginVCM!
 	
-
 	
+	
+	@IBOutlet weak var enterButton: UIButton!
 	
 	@IBOutlet weak var emailTextField: UITextField!
 	
 	@IBOutlet weak var passwordTextField: UITextField!
 	
-	var coordinator: Coordinator?
-	
-	
 	@IBAction func enterClicked(_ sender: Any) {
-		viewModel.LoginOrRegisterUser()
-		
+		viewModel.loginPressed()
 	}
 	
-    override func viewDidLoad() {
-        super.viewDidLoad()
+	var coordinator: LoginCoordinator?
+	
+	
+	override func viewWillAppear(_ animated: Bool) {
+		FirebaseAuth.Auth.auth().addStateDidChangeListener { authentication, optionalUser in
+			self.viewModel.stateChangeListener?(authentication,optionalUser)
+		}
+	}
+	override func viewDidLoad() {
+		super.viewDidLoad()
 		
+		appendChildCoordinators()
 		setRightBarButton()
-
+		
 		emailTextField.addTarget(self, action: #selector(emailTextChanged), for: .editingChanged)
 		passwordTextField.addTarget(self, action: #selector(passwordTextChanged), for: .editingChanged)
-        
+		
 		viewModel.presentAlertCallback = { controller in
 			self.present(controller, animated: true, completion: nil)
 		}
-		viewModel.dismissViewCallback = {
-			self.dismiss(animated: true, completion: nil)
+		
+		
+		viewModel.dismissViewCallback = { [self] in
+			
+			coordinator?.eventOccured(with: .success)
+			
+			
+			
 		}
-    }
-
+		
+		
+		
+		enterButton.layer.addBorder(edge: .top, color: UIColor.blue, thickness: 2)
+		enterButton.layer.addBorder(edge: .bottom, color: .blue, thickness: 2)
+		enterButton.layer.addBorder(edge: .left, color: .blue, thickness: 2)
+		enterButton.layer.addBorder(edge: .right, color: .blue, thickness: 2)
+		
+	}
+	
 	
 	
 	@objc func saveUser() {
@@ -53,9 +74,13 @@ class LoginVC: UIViewController, ViewModelBased, StoryboardBased, Coordinating {
 		let button = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(saveUser))
 		button.tintColor = UIColor.black
 		navigationItem.rightBarButtonItem = button
-	
+		
 	}
-
+	func appendChildCoordinators() {
+		let navController = UINavigationController()
+		let loginCoordinator = LoginCoordinator(navigationController: navController)
+		coordinator?.childCoordinators?.append(loginCoordinator)
+	}
 	
 	
 	@objc func emailTextChanged() {

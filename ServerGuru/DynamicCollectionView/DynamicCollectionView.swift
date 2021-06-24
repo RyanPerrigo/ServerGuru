@@ -15,7 +15,7 @@ class DynamicCollectionView: UIView, UICollectionViewDataSource, UICollectionVie
 	@IBOutlet weak var innerCollectionView: UICollectionView!
 	
 	
-	var holderData: [BaseviewHolderModel] = []
+	var holderData: [BaseViewHolderModel] = []
 	
 	
 	
@@ -65,7 +65,7 @@ class DynamicCollectionView: UIView, UICollectionViewDataSource, UICollectionVie
 		
 	}
 	
-	func pushImmutableList(holderModels: [BaseviewHolderModel]) {
+	func pushImmutableList(holderModels: [BaseViewHolderModel]) {
 		
 		holderModels.forEach { cellModel in
 			

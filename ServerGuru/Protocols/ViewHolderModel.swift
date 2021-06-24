@@ -8,12 +8,12 @@
 import UIKit
 
 
-protocol BaseviewHolderModel {
+protocol BaseViewHolderModel {
 	func provideNibName() -> String
 	func provideCellSize() -> CGSize
 	func createCustomCell(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell
 }
 
 protocol BaseviewHolder: UICollectionViewCell {
-	func bindData(data: BaseviewHolderModel)
+	func bindData(data: BaseViewHolderModel)
 }

@@ -7,24 +7,13 @@
 
 import UIKit
 
-enum Event {
-	case MainViewVC
-	case loginVC
-}
-
 protocol Coordinator {
-	var navController: UINavigationController? {get set}
+	var childCoordinators: [Coordinator]? {get set}
+	var navController: UINavigationController {get set}
 	
 	func start()
-	
-	func eventOccured(with type: Event)
 }
 
-protocol Coordinating {
-	var coordinator: Coordinator? {get set}
-	
-	
-	
-}
+
 
 

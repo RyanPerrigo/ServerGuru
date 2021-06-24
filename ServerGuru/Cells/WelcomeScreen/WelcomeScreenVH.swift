@@ -7,14 +7,14 @@
 
 import UIKit
 
-class StandardButtonCVC: UICollectionViewCell, BaseviewHolder {
+class WelcomeScreenVH: UICollectionViewCell, BaseviewHolder {
 	
 	@IBOutlet weak var labelOne: UILabel!
 	@IBOutlet weak var labelTwo: UILabel!
 	@IBOutlet weak var labelThree: UILabel!
 	
 	
-	func bindData(data: BaseviewHolderModel) {
+	func bindData(data: BaseViewHolderModel) {
 		
 	}
 	
@@ -27,17 +27,17 @@ class StandardButtonCVC: UICollectionViewCell, BaseviewHolder {
 }
 
 
-struct StandardButtonCellModel: BaseviewHolderModel {
+struct WelcomeScreenVHM: BaseViewHolderModel {
 	
 	
 	func provideNibName() -> String {
-		"StandardButtonCVC"
+		"WelcomeScreenVH"
 	}
 	
 	func provideCellSize() -> CGSize {
 		return CGSize(
 			width: UIScreen.main.bounds.width,
-			height: UIScreen.main.bounds.height * 0.4)
+			height: UIScreen.main.bounds.height)
 	}
 	
 	func createCustomCell(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {

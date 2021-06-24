@@ -12,26 +12,27 @@ import RxCocoa
 
 
 
-class MainVC: UIViewController, Coordinating,ViewModelBased, StoryboardBased {
+class MainVC: UIViewController,ViewModelBased,StoryboardBased {
+	
 	
 	
 	var viewModel: MainVCM!
+	
 	let disposeBag = DisposeBag()
 	
 	
 	@IBAction func loginPressed(_ sender: Any) {
-		let vm = LoginVCM(loginState: LoginVCState())
-		let vc = LoginVC.instantiate(withViewModel: vm)
-		vc.navigationItem.title = "Login"
-		coordinator?.navController?.pushViewController(vc, animated: true)
+		
+		coordinator?.eventOccured(with: .login)
 	}
 	
 	@IBAction func registerPressed(_ sender: Any) {
+		
 	}
 	@IBOutlet weak var dynamicCollectionView: DynamicCollectionView!
 	
 	
-	var coordinator: Coordinator?
+	var coordinator: MainCoordinator?
 			
 		
 	

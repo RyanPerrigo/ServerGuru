@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Restaurant SelectionVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="RestaurantSelectionVC" customModule="ServerGuru" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qo3-BN-mBe">
+                                <rect key="frame" x="0.0" y="762" width="414" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lb7-Fb-mGs">
+                                        <rect key="frame" x="136" y="35" width="141" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Add New Restaurant"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Srj-xu-8Az"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7sJ-JW-xA2" customClass="DynamicCollectionView" customModule="ServerGuru" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="89" width="414" height="673"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Restaurants" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A10-rK-l3k">
+                                <rect key="frame" x="0.0" y="64" width="414" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="F8u-L5-4cJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Qo3-BN-mBe" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="A3R-qJ-JmE"/>
+                            <constraint firstItem="A10-rK-l3k" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="Buy-K7-VuG"/>
+                            <constraint firstItem="7sJ-JW-xA2" firstAttribute="top" secondItem="A10-rK-l3k" secondAttribute="bottom" id="H0n-C8-mdH"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Qo3-BN-mBe" secondAttribute="trailing" id="HP1-UW-PpC"/>
+                            <constraint firstItem="7sJ-JW-xA2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="NLh-kV-oSs"/>
+                            <constraint firstItem="Qo3-BN-mBe" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="fBq-sz-mAT"/>
+                            <constraint firstItem="A10-rK-l3k" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="mq8-mm-j5M"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="7sJ-JW-xA2" secondAttribute="trailing" id="nKH-Ib-8tY"/>
+                            <constraint firstItem="Qo3-BN-mBe" firstAttribute="top" secondItem="7sJ-JW-xA2" secondAttribute="bottom" id="phb-qf-esO"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="A10-rK-l3k" secondAttribute="trailing" id="pk6-P4-K3a"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addNewRestaurantTapped" destination="Lb7-Fb-mGs" id="5ke-m6-Glg"/>
+                        <outlet property="dynamicCollectionView" destination="7sJ-JW-xA2" id="3pm-1u-nep"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="64" y="98"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

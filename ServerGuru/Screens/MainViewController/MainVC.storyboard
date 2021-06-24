@@ -22,19 +22,19 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Uh-pX-ySO">
                                 <rect key="frame" x="0.0" y="746" width="414" height="150"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="111" translatesAutoresizingMaskIntoConstraints="NO" id="NSh-rI-bBu">
-                                        <rect key="frame" x="104" y="60" width="206" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="NSh-rI-bBu">
+                                        <rect key="frame" x="145" y="35" width="124" height="80"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQf-yc-D6j">
-                                                <rect key="frame" x="0.0" y="0.0" width="38" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="124" height="30"/>
                                                 <state key="normal" title="Login"/>
                                                 <connections>
                                                     <action selector="loginPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Dtl-3X-2bP"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ief-gq-l38">
-                                                <rect key="frame" x="149" y="0.0" width="57" height="30"/>
-                                                <state key="normal" title="Register"/>
+                                                <rect key="frame" x="0.0" y="50" width="124" height="30"/>
+                                                <state key="normal" title="Continue as guest"/>
                                                 <connections>
                                                     <action selector="registerPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fnE-a2-Itm"/>
                                                 </connections>

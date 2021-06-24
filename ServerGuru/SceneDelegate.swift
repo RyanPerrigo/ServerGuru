@@ -21,8 +21,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 	
 		navVC.navigationItem.standardAppearance?.backgroundColor = UIColor.clear
 		
-		let coordinator = MainCoordinator()
-		coordinator.navController = navVC
+		let coordinator = MainCoordinator(navigationController: navVC)
+		
 		
 		let window = UIWindow(windowScene: windowScene)
 		window.rootViewController = navVC
