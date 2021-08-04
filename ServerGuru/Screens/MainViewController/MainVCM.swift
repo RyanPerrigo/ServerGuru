@@ -26,4 +26,7 @@ class MainVCM: ViewModel{
 		holderModelStateSubject.onNext(holderModelsToDisplay)
 	}
 	
+	func continueAsGuestPressed() {
+		
+	}
 }

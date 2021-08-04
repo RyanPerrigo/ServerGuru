@@ -14,19 +14,22 @@ enum AuthEvents {
 	case getUser
 }
 
-protocol AuthListener: AnyObject {
-	func authEventOccured(with eventType: AuthEvents )
-}
-
 
 class AuthManager {
 	
-	var authListener: AuthListener?
-	var showAlertCallback: ((String,String)->Void)?
-	var dissmissViewCallBack: (()->Void)?
+	private var userManager: UserManager
 	
+	init(userManager:UserManager) {
+		self.userManager = userManager
+	}
 	
-	func loginOrRegisterUser(email: String, password: String ) {
+	func loginOrRegisterUser(
+		email: String,
+		password: String,
+		showAlertCallback: ((String, String) -> Void)?,
+		dismissViewCallBack:(()->Void)?
+		
+	){
 		print("LoginOrRegisterUser")
 		
 		FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { [weak self] results, error in
@@ -35,11 +38,42 @@ class AuthManager {
 			guard error == nil else {
 				
 				print("sign in failed showing alert now!")
-				strongSelf.showAlertCallback?(email,password)
+				showAlertCallback?(email,password)
+				
 				return
 			}
-			strongSelf.dissmissViewCallBack?()
+			
+			guard let safeResults: AuthDataResult = results else {return}
+			
+			
+			let passUserToUserManagerEvent = EventBusEvent(
+				name: "passUserToUserManager",
+				event: safeResults.user
+			)
+			
+			EventBus.Instance().broadcastEventToAllListeners(event: passUserToUserManagerEvent)
+			dismissViewCallBack?()
+			
+			let myUser: User = safeResults.user
+			
+			strongSelf.userManager.saveUser(user: myUser)
+			
+			// pass user to UserManager
+			/*
+			injectedUserManager.saveUser(user: User) {
+			userDefaultsManager.saveEmail
+			}
+			*/
 			print("login successful \(results?.user.uid)")
+		}
+	}
+	func removeEventListner(){
+		
+	}
+	func onLoginStateChange() {
+		EventBus.Instance().addEventListener(identifier: Constants.loginStateChanged) { EventBusEvent in
+			print("LOGIN STATE CHANGED")
+			// this is where im trying to "handle???" the event that is defined on line 44
 		}
 	}
 	
@@ -60,8 +94,8 @@ class AuthManager {
 		
 	}
 	
-	func userLoggedIn() {
-		authListener?.authEventOccured(with: .loggedIn)
+	func getLoggedInUser(user:User) {
+		
 	}
 	
 }

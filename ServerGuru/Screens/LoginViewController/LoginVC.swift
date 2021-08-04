@@ -30,14 +30,17 @@ class LoginVC: UIViewController, ViewModelBased, StoryboardBased {
 	
 	
 	override func viewWillAppear(_ animated: Bool) {
-		FirebaseAuth.Auth.auth().addStateDidChangeListener { authentication, optionalUser in
-			self.viewModel.stateChangeListener?(authentication,optionalUser)
-		}
+		
+		viewModel.listenForUserStateChange()
+		
+	}
+	override func viewWillDisappear(_ animated: Bool) {
+		viewModel.removeListener()
 	}
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		appendChildCoordinators()
+		//appendChildCoordinators()
 		setRightBarButton()
 		
 		emailTextField.addTarget(self, action: #selector(emailTextChanged), for: .editingChanged)
@@ -46,14 +49,8 @@ class LoginVC: UIViewController, ViewModelBased, StoryboardBased {
 		viewModel.presentAlertCallback = { controller in
 			self.present(controller, animated: true, completion: nil)
 		}
-		
-		
 		viewModel.dismissViewCallback = { [self] in
-			
 			coordinator?.eventOccured(with: .success)
-			
-			
-			
 		}
 		
 		
@@ -76,11 +73,11 @@ class LoginVC: UIViewController, ViewModelBased, StoryboardBased {
 		navigationItem.rightBarButtonItem = button
 		
 	}
-	func appendChildCoordinators() {
-		let navController = UINavigationController()
-		let loginCoordinator = LoginCoordinator(navigationController: navController)
-		coordinator?.childCoordinators?.append(loginCoordinator)
-	}
+	//	func appendChildCoordinators() {
+	//		let navController = UINavigationController()
+	//		let loginCoordinator = LoginCoordinator(navigationController: navController)
+	//		coordinator?.childCoordinators?.append(loginCoordinator)
+	//	}
 	
 	
 	@objc func emailTextChanged() {

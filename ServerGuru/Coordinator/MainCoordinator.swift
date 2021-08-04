@@ -11,10 +11,11 @@
 
 import UIKit
 
-enum Event {
+enum MainCoordinatorEvents {
 	case appStart
 	case login
-	case restaurantSelection
+	case menuSelection
+	case continueAsGuest
 }
 
 class MainCoordinator: Coordinator {
@@ -37,10 +38,9 @@ class MainCoordinator: Coordinator {
 		UINavigationBar.appearance().backIndicatorImage = UIImage()
 		
 		navController.setViewControllers([vc], animated: false)
-		
 	}
 	
-	func eventOccured(with type: Event) {
+	func eventOccured(with type: MainCoordinatorEvents) {
 		
 		switch type {
 		case .appStart:
@@ -58,15 +58,28 @@ class MainCoordinator: Coordinator {
 			
 		case .login:
 			let child = LoginCoordinator(navigationController: navController)
+			child.parentCoordinator = self
 			childCoordinators?.append(child)
 			child.eventOccured(with: .intialStep)
 			
-		case .restaurantSelection:
-			let vm = RestaurantSelectionVM()
-			let vc = RestaurantSelectionVC.instantiate(withViewModel: vm)
-			vc.navigationItem.title = "Restaurant Selection"
-			navController.pushViewController(vc, animated: true)
-		
+		case .menuSelection:
+			let child = MenuSelectCoordinator(navController: navController)
+			let vm = MenuSelectionVCM()
+			let vc = MenuSelectionVC.instantiate(withViewModel: vm)
+			vc.navigationItem.title = "Menu Selection"
+			vc.coordinator = child
+			navController.setViewControllers([vc], animated: true)
+			
+			
+//			let child = MenuSelectCoordinator(navController: navController)
+//			childCoordinators?.append(child)
+//			child.start()
+		case .continueAsGuest:
+			let child = LoginCoordinator(navigationController: navController)
+			
+			child.parentCoordinator = self
+			childCoordinators?.append(child)
+			child.eventOccured(with: .success)
 		}
 		
 		

@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		window.makeKeyAndVisible()
 		self.window = window
 		
-		coordinator.eventOccured(with: Event.appStart)
+		coordinator.eventOccured(with: MainCoordinatorEvents.appStart)
 		FirebaseApp.configure()
 		// Override point for customization after application launch.
 		return true

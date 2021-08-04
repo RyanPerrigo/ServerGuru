@@ -26,8 +26,8 @@ class MainVC: UIViewController,ViewModelBased,StoryboardBased {
 		coordinator?.eventOccured(with: .login)
 	}
 	
-	@IBAction func registerPressed(_ sender: Any) {
-		
+	@IBAction func continueAsGuestPressed(_ sender: Any) {
+		coordinator?.eventOccured(with: .continueAsGuest)
 	}
 	@IBOutlet weak var dynamicCollectionView: DynamicCollectionView!
 	
@@ -49,8 +49,7 @@ class MainVC: UIViewController,ViewModelBased,StoryboardBased {
 		viewModel.setScreenState()
 		}
 	
-		
-		
+	
 
 		// Do any additional setup after loading the view.
 	}

@@ -13,14 +13,14 @@ import RxCocoa
 
 class RestaurantSelectionVC: UIViewController, StoryboardBased, ViewModelBased {
 	
-	var viewModel: RestaurantSelectionVM!
+	var viewModel: RestaurantSelectionVCM!
 	var disposeBag = DisposeBag()
 	
 	@IBOutlet weak var dynamicCollectionView: DynamicCollectionView!
 	
 	@IBOutlet weak var addNewRestaurantTapped: UIButton!
 	
-	weak var coordinator: LoginCoordinator?
+	var coordinator: MainCoordinator?
 	
 	override func viewDidLoad() {
 		
@@ -41,7 +41,14 @@ class RestaurantSelectionVC: UIViewController, StoryboardBased, ViewModelBased {
 		viewModel.presentAlertCallback = { alert in
 			self.present(alert, animated: true, completion: nil)
 		}
-
+		
+		viewModel.navigateToMenuSelectionCallback = {
+			print("MENU SELECTION CALLBACK HIT!!")
+			self.coordinator?.eventOccured(with: .menuSelection)
+			self.dismiss(animated: true)
+			
+			
+		}
 	}
 }
 

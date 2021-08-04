@@ -36,7 +36,7 @@
                                                 <rect key="frame" x="0.0" y="50" width="124" height="30"/>
                                                 <state key="normal" title="Continue as guest"/>
                                                 <connections>
-                                                    <action selector="registerPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fnE-a2-Itm"/>
+                                                    <action selector="continueAsGuestPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fnE-a2-Itm"/>
                                                 </connections>
                                             </button>
                                         </subviews>

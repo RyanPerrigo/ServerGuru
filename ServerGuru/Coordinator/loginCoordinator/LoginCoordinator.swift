@@ -43,7 +43,8 @@ class LoginCoordinator: Coordinator {
 
 
 	private func goToLoginVC() {
-		let authManager = AuthManager()
+		let userManager = UserManager(userState: UserManagerState())
+		let authManager = AuthManager(userManager: userManager)
 		let loginState = LoginVCState()
 		let vm = LoginVCM(loginState: loginState, authManager: authManager)
 		let vc = LoginVC.instantiate(withViewModel: vm)
@@ -53,11 +54,16 @@ class LoginCoordinator: Coordinator {
 	}
 
 	private func goToRestaurantSelectionVC() {
-		let vm = RestaurantSelectionVM()
-		let vc = RestaurantSelectionVC.instantiate(withViewModel: vm)
-		vc.coordinator = self
-		navController.setViewControllers([vc], animated: true)
+		//navController.popViewController(animated: true)
+		let vm = RestaurantSelectionVCM()
 		
+		let vc = RestaurantSelectionVC.instantiate(withViewModel: vm)
+		
+		vc.coordinator = parentCoordinator
+		navController.setViewControllers([vc], animated: true)
+	}
+	private func goToMenuSelectionCoordinator() {
+		parentCoordinator?.eventOccured(with: .menuSelection)
 	}
 	
 	
