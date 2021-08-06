@@ -87,54 +87,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FCD01839-03D6-467D-81A9-4A7D2B26C1D0"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ServerGuru/Screens/RestaurantSelectionVC/RestaurantSelectionVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "FCD01839-03D6-467D-81A9-4A7D2B26C1D0 - dfbce9094d46a036"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ServerGuru.RestaurantSelectionVC.viewDidLoad() -&gt; ()"
-                  moduleName = "ServerGuru"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/imantium/development/iOS/Working-Projects/ServerGuru/ServerGuru/Screens/RestaurantSelectionVC/RestaurantSelectionVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "2077">
-               </Location>
-               <Location
-                  uuid = "FCD01839-03D6-467D-81A9-4A7D2B26C1D0 - 1f64837f94165c65"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #4 () -&gt; () in ServerGuru.RestaurantSelectionVC.viewDidLoad() -&gt; ()"
-                  moduleName = "ServerGuru"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/imantium/development/iOS/Working-Projects/ServerGuru/ServerGuru/Screens/RestaurantSelectionVC/RestaurantSelectionVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "46"
-                  endingLineNumber = "46"
-                  offsetFromSymbolStart = "20">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "4D142F7A-47FD-4C56-B576-F40AA80BDF8B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -145,22 +97,6 @@
             startingLineNumber = "65"
             endingLineNumber = "65"
             landmarkName = "eventOccured(with:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BAFEA6AA-7911-468F-AAC0-EA3762BB2503"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ServerGuru/Screens/RestaurantSelectionVC/RestaurantSelectionVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

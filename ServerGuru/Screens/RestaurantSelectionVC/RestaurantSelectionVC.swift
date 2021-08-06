@@ -24,8 +24,11 @@ class RestaurantSelectionVC: UIViewController, StoryboardBased, ViewModelBased {
 	
 	override func viewDidLoad() {
 		
+		viewModel.navigateToMenuSelectionCallback = {
+			self.coordinator?.eventOccured(with: .menuSelection)
+		}
 		addNewRestaurantTapped.rx.tap.subscribe { _ in
-			self.viewModel.addRestaurantToList()
+			self.onRightButtonPressed()
 		}
 		.disposed(by: disposeBag)
 		
@@ -37,19 +40,23 @@ class RestaurantSelectionVC: UIViewController, StoryboardBased, ViewModelBased {
 		.disposed(by: disposeBag)
 		
 		viewModel.setInitalScreenState()
+	
+	}
+	
+	func onRightButtonPressed() {
+		let alert = UIAlertController(title: "Add Restaurant", message: "", preferredStyle: .alert)
 		
-		viewModel.presentAlertCallback = { alert in
-			self.present(alert, animated: true, completion: nil)
+		alert.addTextField { textField in
+			textField.placeholder = "Enter Restaurant Name"
 		}
 		
-		viewModel.navigateToMenuSelectionCallback = {
-			print("MENU SELECTION CALLBACK HIT!!")
-			self.coordinator?.eventOccured(with: .menuSelection)
-			self.dismiss(animated: true)
-			
-			
-		}
+		alert.addAction(UIAlertAction(title: "Add", style: .default, handler: { [ unowned self] _ in
+			let textField = alert.textFields!.first! as UITextField
+			if let safeText = textField.text {
+				viewModel.addRestaurantToList(name: safeText)
+			}
+		}))
+
+		self.present(alert, animated: true, completion: nil)
 	}
 }
-
-

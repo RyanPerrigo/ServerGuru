@@ -23,7 +23,7 @@ class MenuSelectionVCM: ViewModel {
 	
 	func addMenuHolderModel(menuName: String) {
 		
-		let holderModel = MenuCellVHM(menuName: menuName, viewTappedEventListener: { [self] in
+		let holderModel = MenuCellVHM(menuName: menuName, backgroundColor: .red, viewTappedEventListener: { [self] in
 			navigateToMenuCreationCallBack?()
 		})
 		

@@ -12,6 +12,7 @@ class MenuCellVH: UICollectionViewCell, BaseviewHolder {
 
 	@IBOutlet weak var menuNameLabel: UILabel!
 	var eventListener: (()->Void)?
+	@IBOutlet weak var topLevelView: UIView!
 	
 	override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,21 +20,21 @@ class MenuCellVH: UICollectionViewCell, BaseviewHolder {
     }
 	
 	func bindData(data: BaseViewHolderModel) {
-		
 		let vm = data as! MenuCellVHM
+		menuNameLabel.text = vm.menuName
+		topLevelView.backgroundColor = vm.backgroundColor
+		
+		let tap = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
+		self.addGestureRecognizer(tap)
 		
 		eventListener = {
 			vm.viewTappedEventListener()
 		}
 		
-		let tap = UIGestureRecognizer(target: self, action: #selector(viewTapped))
-		self.addGestureRecognizer(tap)
-		
-		menuNameLabel.text = vm.menuName
-		
 		
 	}
 	@objc func viewTapped() {
+		print("viewTapped")
 		eventListener?()
 	}
 
@@ -42,6 +43,7 @@ class MenuCellVH: UICollectionViewCell, BaseviewHolder {
 struct MenuCellVHM: BaseViewHolderModel {
 	
 	var menuName: String
+	var backgroundColor: UIColor
 	var viewTappedEventListener: ()->Void
 	
 	func provideNibName() -> String {

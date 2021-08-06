@@ -37,18 +37,22 @@ class MenuSelectionVC: UIViewController,ViewModelBased,StoryboardBased {
 	@objc func onRightButtonClicked() {
 		
 		let alert = UIAlertController(title: "Select Menu or Add New", message: "Please select a menu or Enter Menu Name here", preferredStyle: .alert)
+		
 		alert.addTextField { textField in
 			textField.placeholder = "Menu Name Here"
 		}
+		
 		alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { _ in
 			let textField = alert.textFields![0] as UITextField
 			if let safeText = textField.text {
 				self.viewModel.addMenuHolderModel(menuName: safeText)
 			}
 		}))
+		
 		self.present(alert, animated: true, completion: nil)
 		
 	}
+	
 	func setRightBarButton() {
 		
 		let button = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onRightButtonClicked))

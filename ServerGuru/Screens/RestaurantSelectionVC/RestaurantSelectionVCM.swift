@@ -7,16 +7,13 @@
 
 import Foundation
 import RxSwift
-import RxCocoa
-
 
 
 class RestaurantSelectionVCM: ViewModel {
 	
 	
-	
 	private var viewModelStateSubject = BehaviorSubject<[BaseViewHolderModel]>(value: [])
-	var presentAlertCallback: ((UIAlertController)->Void)?
+	var presentAlertCallback: (()->Void)?
 	var navigateToMenuSelectionCallback: (()->Void)?
 	func viewModelObservable() -> Observable<[BaseViewHolderModel]> {
 		return viewModelStateSubject.asObservable()
@@ -31,29 +28,12 @@ class RestaurantSelectionVCM: ViewModel {
 		viewModelStateSubject.onNext(holderModelsToDisplay)
 	}
 	
-	func addRestaurantToList() {
-		let alert = UIAlertController(title: "Add Restaurant", message: "", preferredStyle: .alert)
+	func addRestaurantToList(name:String) {
 		
-		alert.addTextField { textField in
-			textField.placeholder = "Enter Restaurant Name"
+		let restaurantHolderModel = RestaurantCellVHM(restaurantName: name, viewTappedListener: {
+			self.navigateToMenuSelectionCallback?()
+		})
+		holderModelsToDisplay.append(restaurantHolderModel)
+		viewModelStateSubject.onNext(holderModelsToDisplay)
 		}
-		
-		alert.addAction(UIAlertAction(title: "Add", style: .default, handler: { [unowned self] _ in
-			let textField = alert.textFields!.first! as UITextField
-			if let safeText = textField.text {
-				
-				let restaurantModel = RestaurantCellVHM(restaurantName: safeText, viewTappedListener: {
-				
-					navigateToMenuSelectionCallback?()
-				})
-				holderModelsToDisplay.append(restaurantModel)
-				viewModelStateSubject.onNext(holderModelsToDisplay)
-			}
-			
-		}))
-		
-		presentAlertCallback?(alert)
-		
-	}
-	
 }

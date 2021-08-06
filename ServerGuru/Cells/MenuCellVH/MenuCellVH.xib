@@ -45,6 +45,7 @@
             <size key="customSize" width="317" height="152"/>
             <connections>
                 <outlet property="menuNameLabel" destination="EVv-Pi-w4a" id="0iZ-gk-7LF"/>
+                <outlet property="topLevelView" destination="d9k-z1-u1W" id="AOu-1n-FhE"/>
             </connections>
             <point key="canvasLocation" x="218.11594202898553" y="137.94642857142856"/>
         </collectionViewCell>
